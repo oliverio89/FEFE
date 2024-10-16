@@ -3,6 +3,7 @@ import Button from "../components/button";
 import GroupComponent2 from "../components/group-component2";
 import FrameComponent5 from "../components/frame-component5";
 
+
 export type RootType = {
   className?: string;
 };
@@ -17,9 +18,11 @@ const Root: FunctionComponent<RootType> = memo(({ className = "" }) => {
   }, []);
 
   return (
+
     <div
       className={`w-[1129px] max-w-full flex flex-col items-end justify-start gap-[55px] leading-[normal] tracking-[normal] text-center text-lg text-nude font-texto mq725:gap-[27px] ${className}`}
     >
+  
       <main className="self-stretch flex flex-row items-start justify-end py-0 pl-0 pr-[7px] box-border max-w-full">
         <section className="flex-1 flex flex-col items-start justify-start gap-9 max-w-full text-left text-lg text-nude font-texto mq725:gap-[18px]">
           <header className="self-stretch flex flex-row items-start justify-end pt-4 px-0 pb-0 sticky top-[0] z-[99] text-left text-81xl text-dark-gold font-texto">

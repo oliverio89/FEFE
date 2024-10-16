@@ -1,11 +1,9 @@
 import { FunctionComponent } from "react";
-import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import BestMasters from "../components/BestMasters";
 import NextGames from "../components/NextGames";
 import UpcomingGamesCarousel from "../components/UpcomingGamesCarousel";
 import OurComunityOnline from "../components/OurComunityOnline";
-import Footer from "../components/Footer";
 
 const HomeV: FunctionComponent = () => {
   return (
@@ -15,7 +13,6 @@ const HomeV: FunctionComponent = () => {
         alt=""
         src="/2hmediaz9jv6wrkrpaunsplash-1@2x.png"
       />
-      <Navbar />
       <Header />
       <section className="self-stretch bg-oldlace-100 flex flex-row items-start justify-start pt-[100px] px-20 pb-[100px] box-border gap-10 max-w-full text-left text-81xl text-black font-titulo-2 mq750:gap-5 mq750:pt-[61px] mq750:px-10 mq750:pb-[65px] mq750:box-border mq1050:flex-wrap">
         <div className="h-[625px] w-[1280px] relative bg-oldlace-100 hidden max-w-full" />
@@ -42,12 +39,9 @@ const HomeV: FunctionComponent = () => {
         </div>
       </section>
       <BestMasters />
-      
-        <NextGames />
-        <UpcomingGamesCarousel />
-      
+      <NextGames />
+      <UpcomingGamesCarousel />
       <OurComunityOnline />
-      <Footer />
     </div>
   );
 };

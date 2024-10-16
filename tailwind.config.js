@@ -10,30 +10,20 @@ module.exports = {
         oldlace: {
           "100": "#f2ecdd",
           "200": "rgba(242, 236, 221, 0.15)",
+          "300": "rgba(242, 236, 221, 0.25)",
         },
         darkslategray: "#333533",
-        darkgoldenrod: "#996900",
         black1: "#000",
         goldenrod: "#f5cb5c",
-        gray: "rgba(0, 0, 0, 0.25)",
-        white: "#fff",
-        black: "#0b0b0b",
         "dark-gold": "#cd9c20",
         nude: "#f2ecdd",
-        darkslategray: "#333533",
         darkgoldenrod: {
           "100": "#996900",
           "200": "rgba(153, 105, 0, 0.09)",
         },
-        black1: "#000",
-        goldenrod: "#f5cb5c",
         gray: {
           "100": "rgba(0, 0, 0, 0.1)",
           "200": "rgba(0, 0, 0, 0.25)",
-        },
-        oldlace: {
-          "200": "rgba(242, 236, 221, 0.15)",
-          "300": "rgba(242, 236, 221, 0.25)",
         },
         lightgray: {
           "100": "#d9d4c4",

@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import HomeV from "./pages/HomeV";
+import HomeV from "./pages/Home";
 import CrearPartida from "./pages/CrearPartida";
 import PartidasDetalles from "./pages/PartidasDetalles";
 import Register from "./pages/Register";
@@ -59,8 +59,9 @@ function App() {
       {/* <Route path="/partidadetalles" element={<PartidasDetalles />} /> */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<LogIn />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/contacto" element={<Contact />} />
       <Route path="/user" element={<UserDetail />} />
+      <Route path="/ourmasters" element={<OurMasters />} />
       <Route path="/master" element={<MasterDetail />} />
       <Route path="/nextgames" element={<NextGames />} />
       <Route path="/ourmasters" element={<OurMasters />} />

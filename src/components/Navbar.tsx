@@ -1,4 +1,5 @@
 import { FunctionComponent, memo, useCallback } from "react";
+import { useNavigate, useLocation } from "react-router-dom"; // Importamos useNavigate y useLocation
 
 export type FrameComponent1Type = {
   className?: string;
@@ -6,21 +7,37 @@ export type FrameComponent1Type = {
 
 const Navbar: FunctionComponent<FrameComponent1Type> = memo(
   ({ className = "" }) => {
-    const onNuestrosMstersTextClick = useCallback(() => {Navbar
-      // Please sync "Masters v1.2" to the project
-    }, []);
+    const navigate = useNavigate(); // Hook para redireccionar
+    const location = useLocation(); // Hook para obtener la ruta actual
+
+    // Funciones para navegar
+    const onHomeTextClick = useCallback(() => {
+      navigate("/"); // Redirige a la ruta principal
+    }, [navigate]);
+
+    const onNuestrosMastersTextClick = useCallback(() => {
+      navigate("/ourmasters"); // Redirige a la ruta /masters
+    }, [navigate]);
 
     const onPartidasTextClick = useCallback(() => {
-      // Please sync "Partidas v1.2" to the project
-    }, []);
+      navigate("/nextgames"); // Redirige a la ruta /partidas
+    }, [navigate]);
 
     const onContactoTextClick = useCallback(() => {
-      // Please sync "Contacto" to the project
-    }, []);
+      navigate("/contacto"); // Redirige a la ruta /contacto
+    }, [navigate]);
+
+    const onUserDetailTextClick = useCallback(() => {
+      navigate("/user"); // Redirige a la ruta /contacto
+    }, [navigate]);
+
+    // Función para determinar si el enlace está activo
+    const getLinkClass = (path: string) =>
+      location.pathname === path ? "text-goldenrod" : "text-white";
 
     return (
       <section
-        className={`self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-16 box-border top-[0] z-[99] sticky max-w-full ${className}`}
+        className={`self-stretch flex flex-row items-start justify-start pt-0 px-0  box-border top-[0] z-[99] sticky max-w-full ${className}`}
       >
         <header className="self-stretch flex-1 bg-black overflow-auto flex flex-row items-start justify-between py-0 px-20 box-border gap-5 max-w-full z-[1] text-center text-9xl text-dark-gold font-milonga mq750:pl-10 mq750:pr-10 mq750:box-border">
           <div className="self-stretch w-[1280px] relative bg-black hidden" />
@@ -30,30 +47,42 @@ const Navbar: FunctionComponent<FrameComponent1Type> = memo(
               <p className="m-1">Experience</p>
             </span>
           </h3>
-          <div className="flex flex-row items-start justify-start gap-[145.3px] max-w-full text-4xs text-black font-titulo-2 mq1050:w-[337px] mq1050:gap-[73px] mq450:gap-9">
+
+          <div className="flex flex-row items-start justify-start gap-[145.3px] max-w-full text-4xs text-white font-titulo-2 mq1050:w-[337px] mq1050:gap-[73px] mq450:gap-9">
             <nav className="m-0 flex-1 flex flex-row items-start justify-start gap-[52px] max-w-full text-center text-xl text-oldlace-100 font-titulo-2 mq750:gap-[26px] mq1050:hidden">
-              <a className="[text-decoration:none] h-20 relative font-medium text-goldenrod flex items-center justify-center min-w-[52px] z-[1]">
+              {/* Enlace Inicio */}
+              <a
+                className={`[text-decoration:none] h-20 relative font-medium flex items-center justify-center min-w-[52px] cursor-pointer z-[1] ${getLinkClass("/")}`}
+                onClick={onHomeTextClick}
+              >
                 Inicio
               </a>
+
+              {/* Enlace Nuestros Másters */}
               <a
-                className="[text-decoration:none] h-20 w-[143px] relative font-medium text-[inherit] flex items-center justify-center shrink-0 cursor-pointer z-[1]"
-                onClick={onNuestrosMstersTextClick}
+                className={`[text-decoration:none] h-20 w-[143px] relative font-medium flex items-center justify-center shrink-0 cursor-pointer z-[1] ${getLinkClass("/ourmasters")}`}
+                onClick={onNuestrosMastersTextClick}
               >
                 Nuestros Másters
               </a>
+
+              {/* Enlace Partidas */}
               <a
-                className="[text-decoration:none] h-20 relative font-medium text-[inherit] flex items-center justify-center min-w-[70px] cursor-pointer z-[1]"
+                className={`[text-decoration:none] h-20 relative font-medium flex items-center justify-center min-w-[70px] cursor-pointer z-[1] ${getLinkClass("/nextgames")}`}
                 onClick={onPartidasTextClick}
               >
                 Partidas
               </a>
+
+              {/* Enlace Contacto */}
               <a
-                className="[text-decoration:none] h-20 relative font-medium text-[inherit] flex items-center justify-center min-w-[72px] cursor-pointer z-[1]"
+                className={`[text-decoration:none] h-20 relative font-medium flex items-center justify-center min-w-[72px] cursor-pointer z-[1] ${getLinkClass("/contacto")}`}
                 onClick={onContactoTextClick}
               >
                 Contacto
               </a>
             </nav>
+
             <div className="h-[61px] flex flex-col items-start justify-start pt-[19px] px-0 pb-0 box-border">
               <div className="self-stretch flex-1 flex flex-row items-start justify-start gap-[24.2px]">
                 <div className="flex flex-col items-start justify-start pt-[7px] px-0 pb-0">
@@ -95,7 +124,8 @@ const Navbar: FunctionComponent<FrameComponent1Type> = memo(
                     src="/user.svg"
                   />
                   <div className="flex-1 flex flex-col items-start justify-start pt-px px-0 pb-0">
-                    <a className="[text-decoration:none] self-stretch relative text-lg font-bold font-titulo-2 text-dark-gold text-center">
+                    <a className="[text-decoration:none] self-stretch relative text-lg font-bold font-titulo-2 text-dark-gold text-center"
+                    onClick={onUserDetailTextClick}>
                       Mi cuenta
                     </a>
                   </div>

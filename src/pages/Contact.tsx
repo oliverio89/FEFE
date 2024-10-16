@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import FormContainer from "../components/form-container";
 import Button from "../components/button";
 
+
 const ContactoV: FunctionComponent = () => {
   const navigate = useNavigate();
 
@@ -11,6 +12,7 @@ const ContactoV: FunctionComponent = () => {
   }, [navigate]);
 
   return (
+  
     <div className="w-full relative bg-white overflow-hidden flex flex-row items-start justify-start leading-[normal] tracking-[normal] [row-gap:20px] text-center text-[6.25rem] text-nude font-titulo-2 mq1025:flex-wrap">
       <div className="bg-black flex flex-col items-start justify-start pt-[20.375rem] px-[0rem] pb-[10.687rem] box-border gap-[2.343rem] min-w-[38.75rem] max-w-full z-[1] mq725:gap-[1.188rem] mq725:pt-[13.25rem] mq725:pb-[6.938rem] mq725:box-border mq725:min-w-full mq1025:flex-1">
         <div className="self-stretch h-[52rem] relative bg-black hidden" />
