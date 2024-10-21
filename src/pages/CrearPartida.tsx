@@ -2,7 +2,6 @@ import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import SessionInfoHeader from "../components/session-info-header";
 import Button from "../components/button";
-import Footer from "../components/footer";
 
 const CrearPartidaV12Login: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -540,7 +539,6 @@ const CrearPartidaV12Login: FunctionComponent = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
